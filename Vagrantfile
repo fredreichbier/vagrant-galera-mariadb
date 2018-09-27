@@ -205,7 +205,7 @@ Vagrant.configure("2") do |config|
 
     cluster_nodes.each do |in_cluster_position, hostname, hostaddr, interface|
         config.vm.define hostname do |box|
-            box.vm.hostname = "#{hostname}"
+            #box.vm.hostname = "#{hostname}"
             #box.vm.network :private_network, ip: "#{hostaddr}", :netmask => "255.255.0.0"
             #box.vm.network :private_network, ip: "#{hostaddr}", :netmask => "255.255.0.0",  virtualbox__intnet: true
             box.vm.network :public_network, ip: "#{hostaddr}", bridge: "#{interface}"
