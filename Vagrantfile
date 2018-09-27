@@ -36,8 +36,9 @@ echo mariadb-galera-server-10.0 mysql-server/root_password_again password root |
 
 LC_ALL=en_US.utf8 DEBIAN_FRONTEND=noninteractive sudo apt-get -o Dpkg::Options::='--force-confnew' -qqy install mariadb-galera-server galera mariadb-client
 
-gpg --keyserver hkp://keys.gnupg.net --recv-keys 1C4CBDCDCD2EFD2A
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 1C4CBDCDCD2EFD2A 9334A25F8507EFA5
 gpg -a --export CD2EFD2A | sudo apt-key add -
+gpg -a --export 8507EFA5 | sudo apt-key add -
 sudo add-apt-repository 'deb http://repo.percona.com/apt precise main'
 sudo add-apt-repository -y ppa:vbernat/haproxy-1.5
 sudo apt-get  -q -y update
